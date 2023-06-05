@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2023 at 08:46 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Host: localhost:3306
+-- Generation Time: Jun 05, 2023 at 06:05 AM
+-- Server version: 5.7.33
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tugas`
+-- Database: `db_sistemsurat`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `akses` (
-  `id_pengguna` char(8) NOT NULL,
+  `id_pengguna` int(11) NOT NULL,
   `nama_pengguna` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(12) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `akses` (
 --
 
 INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, `username`, `password`, `level`) VALUES
-('001', 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin');
+(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin');
 
 -- --------------------------------------------------------
 
@@ -172,6 +172,16 @@ ALTER TABLE `sk`
 --
 ALTER TABLE `sm`
   ADD PRIMARY KEY (`id_sm`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `akses`
+--
+ALTER TABLE `akses`
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
