@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2023 at 10:48 AM
+-- Generation Time: Jun 05, 2023 at 11:29 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -149,9 +149,10 @@ CREATE TABLE `sm` (
 --
 
 INSERT INTO `sm` (`id_sm`, `nosurat`, `pengirim`, `isi`, `sifat`, `tglsurat`, `tglterima`, `status`, `keterangan`, `file`, `id_pengguna`) VALUES
-(5, '231', 'alvin', 'i', '', '2023-06-05', '2023-06-01', '', 'k', 'f', 0),
-(6, '231', 'alvin', 'i', '', '2023-06-06', '2023-06-15', '', 'k', 'fi', 0),
-(7, '111', 'alvin', 'i', '', '2023-06-16', '2023-06-30', '', 'ket', 'fi', 0);
+(5, '231', 'alvin', 'i', '', '2023-06-05', '2023-06-01', '', 'k', 'f', 1),
+(6, '231', 'alvin', 'i', '', '2023-06-06', '2023-06-15', '', 'k', 'fi', 2),
+(7, '111', 'alvin', 'i', '', '2023-06-16', '2023-06-30', '', 'ket', 'fi', 0),
+(8, '23', 'ijot', 'hi', 'Penting', '2023-06-05', '2023-06-06', 'belum didisposisi', 'ok', 'file', 2);
 
 --
 -- Indexes for dumped tables
@@ -225,7 +226,7 @@ ALTER TABLE `sk`
 -- AUTO_INCREMENT for table `sm`
 --
 ALTER TABLE `sm`
-  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
