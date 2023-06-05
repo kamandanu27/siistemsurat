@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2023 at 09:57 AM
+-- Generation Time: Jun 05, 2023 at 10:48 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -43,7 +43,8 @@ CREATE TABLE `akses` (
 --
 
 INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, `username`, `password`, `level`) VALUES
-(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin');
+(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin'),
+(2, 'saya', 'disini', '0889', 'ada', 'admin', '12345', 'admin');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ INSERT INTO `perangkat` (`id_bagian`, `nama_bagian`, `nama`) VALUES
 --
 
 CREATE TABLE `sk` (
-  `id_sk` char(8) NOT NULL,
+  `id_sk` int NOT NULL,
   `no_surat` varchar(20) NOT NULL,
   `kode_klasifikasi` varchar(5) NOT NULL,
   `isi_ringkasan` varchar(100) NOT NULL,
@@ -120,7 +121,7 @@ CREATE TABLE `sk` (
   `sifat` enum('Biasa','Segera','Penting','Rahasia') NOT NULL,
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
-  `id_pengguna` char(8) NOT NULL
+  `id_pengguna` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -148,8 +149,9 @@ CREATE TABLE `sm` (
 --
 
 INSERT INTO `sm` (`id_sm`, `nosurat`, `pengirim`, `isi`, `sifat`, `tglsurat`, `tglterima`, `status`, `keterangan`, `file`, `id_pengguna`) VALUES
-(1, '231', 'alvin', 'i', '', '2023-06-05', '2023-06-01', '', 'k', 'f', 1),
-(2, '111', 'ijot', 'is', '', '2023-06-05', '2023-06-01', '', 'ket', 'fi', 2);
+(5, '231', 'alvin', 'i', '', '2023-06-05', '2023-06-01', '', 'k', 'f', 0),
+(6, '231', 'alvin', 'i', '', '2023-06-06', '2023-06-15', '', 'k', 'fi', 0),
+(7, '111', 'alvin', 'i', '', '2023-06-16', '2023-06-30', '', 'ket', 'fi', 0);
 
 --
 -- Indexes for dumped tables
@@ -199,7 +201,7 @@ ALTER TABLE `sm`
 -- AUTO_INCREMENT for table `akses`
 --
 ALTER TABLE `akses`
-  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `klasifikasi`
@@ -214,10 +216,16 @@ ALTER TABLE `perangkat`
   MODIFY `id_bagian` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `sk`
+--
+ALTER TABLE `sk`
+  MODIFY `id_sk` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sm`
 --
 ALTER TABLE `sm`
-  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

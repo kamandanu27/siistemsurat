@@ -34,7 +34,7 @@
                   ?>
                   <h3 class="box-title">Data Sm</h3>
                   <div style="padding-top: 10px;">
-                  <p><a href="<?= base_url(); ?>sm/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
+                  <p><a href="<?= base_url(); ?>sk/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
                   </div>
             
                 </div><!-- /.box-header -->
@@ -44,15 +44,15 @@
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
                               <th style="width: 15%;text-align: center;">No. Surat</th>
-                              <th style="width: 15%;text-align: center;">Pengirim</th>
-                              <th style="width: 15%;text-align: center;">Isi</th>
-                              <th style="width: 15%;text-align: center;">Sifat</th>
+                              <th style="width: 15%;text-align: center;">Kode Klasifikasi</th>
+                              <th style="width: 15%;text-align: center;">Isi Ringkasan</th>
+                              <th style="width: 15%;text-align: center;">Penerima</th>
                               <th style="width: 15%;text-align: center;">Tanggal Surat</th>
-                              <th style="width: 15%;text-align: center;">Tanggal Terima</th>
-                              <th style="width: 13%;text-align: center;">Status</th>
+                              <th style="width: 15%;text-align: center;">Tanggal Catat</th>
+                              <th style="width: 13%;text-align: center;">Sifat</th>
                               <th style="width: 13%;text-align: center;">Keterangan</th>
                               <th style="width: 13%;text-align: center;">File</th>
-                              <th style="width: 13%;text-align: center;">Nama Pengguna</th>
+                              <th style="width: 13%;text-align: center;">Id Pengguna</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -60,21 +60,21 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
-                              <td><?= $row->nosurat ?></td>
-                              <td><?= $row->pengirim ?></td>
-                              <td><?= $row->isi ?></td>
-                              <td><?= $row->sifat ?></td>
+                              <td><?= $row->no_surat ?></td>
+                              <td><?= $row->kode_klasifikasi ?></td>
+                              <td><?= $row->isi_ringkasan ?></td>
+                              <td><?= $row->penerima ?></td>
                               <td><?= $row->tglsurat ?></td>
-                              <td><?= $row->tglterima ?></td>
-                              <td><?= $row->status ?></td>
+                              <td><?= $row->tglcatat ?></td>
+                              <td><?= $row->sifat ?></td>
                               <td><?= $row->keterangan ?></td>
                               <td><?= $row->file ?></td>
-                              <td><?= $row->nama_pengguna ?></td>
+                              <td><?= $row->id_pengguna ?></td>
 
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>sm/delete/<?= $row->id_sm ?>" method="post">
+                                  <form action="<?= base_url() ?>sk/delete/<?= $row->id_sm ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>sm/edit/<?= $row->id_sm ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>sk/edit/<?= $row->id_sm ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>
