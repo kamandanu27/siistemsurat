@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2023 at 08:26 AM
--- Server version: 8.0.30
--- PHP Version: 7.4.19
+-- Generation Time: Jun 05, 2023 at 08:36 AM
+-- Server version: 5.7.33
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `akses` (
-  `id_pengguna` int NOT NULL,
+  `id_pengguna` int(11) NOT NULL,
   `nama_pengguna` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(12) NOT NULL,
@@ -36,16 +36,14 @@ CREATE TABLE `akses` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `level` enum('lurah','sekretaris','admin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `akses`
 --
 
 INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, `username`, `password`, `level`) VALUES
-(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin'),
-(4, 'saya', 'disini', '0889', 'ada', 'admin', '12345', 'admin'),
-(5, 'kamu', 'disana', '3434', 'iya', 'admin', '12345', 'admin');
+(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin');
 
 -- --------------------------------------------------------
 
@@ -62,7 +60,7 @@ CREATE TABLE `disposisi` (
   `bataswaktu` date NOT NULL,
   `status` enum('sudah didisposisi','belum didisosisi') NOT NULL,
   `id_bagian` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -71,17 +69,17 @@ CREATE TABLE `disposisi` (
 --
 
 CREATE TABLE `klasifikasi` (
-  `kode_klasifikasi` varchar(5) NOT NULL,
+  `kode_klasifikasi` int(5) NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
   `uraian` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `klasifikasi`
 --
 
 INSERT INTO `klasifikasi` (`kode_klasifikasi`, `klasifikasi`, `uraian`) VALUES
-('', 'saya', 'iya');
+(1, 'as', 'as');
 
 -- --------------------------------------------------------
 
@@ -93,7 +91,7 @@ CREATE TABLE `perangkat` (
   `id_bagian` char(8) NOT NULL,
   `nama_bagian` varchar(30) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `perangkat`
@@ -120,7 +118,7 @@ CREATE TABLE `sk` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -140,7 +138,7 @@ CREATE TABLE `sm` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -190,7 +188,13 @@ ALTER TABLE `sm`
 -- AUTO_INCREMENT for table `akses`
 --
 ALTER TABLE `akses`
-  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `klasifikasi`
+--
+ALTER TABLE `klasifikasi`
+  MODIFY `kode_klasifikasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
