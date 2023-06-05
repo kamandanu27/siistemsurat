@@ -90,6 +90,7 @@ class Akses extends CI_Controller {
 
 	public function update()
 	{
+		$cek = $this->akses->detail($this->input->post('id_pengguna'))->row_array();
 		if($cek == null){
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('akses'),'refresh');
