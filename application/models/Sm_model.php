@@ -14,13 +14,13 @@ class Sm_model extends CI_Model {
 		if($where == null){
 			$this->db->select('*');
 			$this->db->from('sm');
-			$this->db->join('tbl_akses', 'tbl_sm. = tbl_akses.id_pengguna');
+			$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
 			$this->db->order_by('sm.id_sm', 'Asc');
 			$query = $this->db->get();
 		}else{
 			$this->db->select('*');
 			$this->db->from('sm');
-			$this->db->join('tbl_akses', 'tbl_sm.id_pengguna = tbl_akses.id_pengguna');
+			$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
 			$this->db->order_by('sm.id_sm', 'Asc');
 			$this->db->where($where);
 			$query = $this->db->get();
@@ -51,7 +51,7 @@ class Sm_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('sm');
-		$this->db->join('tbl_akses', 'tbl_sm.id_pengguna = tbl_akses.id_pengguna');
+		$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
 		$this->db->where('id_sm', $id);
 		$query = $this->db->get();
 		return $query;
