@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2023 at 07:17 AM
+-- Generation Time: Jun 05, 2023 at 08:26 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -43,7 +43,9 @@ CREATE TABLE `akses` (
 --
 
 INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, `username`, `password`, `level`) VALUES
-(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin');
+(1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin'),
+(4, 'saya', 'disini', '0889', 'ada', 'admin', '12345', 'admin'),
+(5, 'kamu', 'disana', '3434', 'iya', 'admin', '12345', 'admin');
 
 -- --------------------------------------------------------
 
@@ -65,14 +67,21 @@ CREATE TABLE `disposisi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `klsifiksi`
+-- Table structure for table `klasifikasi`
 --
 
-CREATE TABLE `klsifiksi` (
+CREATE TABLE `klasifikasi` (
   `kode_klasifikasi` varchar(5) NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
   `uraian` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `klasifikasi`
+--
+
+INSERT INTO `klasifikasi` (`kode_klasifikasi`, `klasifikasi`, `uraian`) VALUES
+('', 'saya', 'iya');
 
 -- --------------------------------------------------------
 
@@ -150,9 +159,9 @@ ALTER TABLE `disposisi`
   ADD PRIMARY KEY (`id_disposisi`);
 
 --
--- Indexes for table `klsifiksi`
+-- Indexes for table `klasifikasi`
 --
-ALTER TABLE `klsifiksi`
+ALTER TABLE `klasifikasi`
   ADD PRIMARY KEY (`kode_klasifikasi`);
 
 --
@@ -181,7 +190,7 @@ ALTER TABLE `sm`
 -- AUTO_INCREMENT for table `akses`
 --
 ALTER TABLE `akses`
-  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -135,7 +135,7 @@ class Akses extends CI_Controller {
 		}else{
 
 			$data = array(
-				'id'	=> $id
+				'id_pengguna'	=> $id
 			);
 			
 			$this->akses->delete($data);
