@@ -44,6 +44,11 @@
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
                               <th style="width: 15%;text-align: center;">Nama</th>
+                              <th style="width: 15%;text-align: center;">Alamat</th>
+                              <th style="width: 15%;text-align: center;">No. Telp</th>
+                              <th style="width: 15%;text-align: center;">Email</th>
+                              <th style="width: 15%;text-align: center;">Username</th>
+                              <th style="width: 15%;text-align: center;">Level</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -52,6 +57,12 @@
                           <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $row->nama_pengguna ?></td>
+                              <td><?= $row->alamat ?></td>
+                              <td><?= $row->telp ?></td>
+                              <td><?= $row->email ?></td>
+                              <td><?= $row->username ?></td>
+                              <td><?= $row->level ?></td>
+
                               <td style="text-align: center;">
                                   <form action="<?= base_url() ?>akses/delete/<?= $row->id_pengguna ?>" method="post">
                                       <div class="btn-group">

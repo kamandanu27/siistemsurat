@@ -51,6 +51,41 @@
                             <input type="text" class="form-control" placeholder="Alamat" name="tempat_lahir" required>
                           </div>
                       </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">No. Telpon</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Telpon" name="tempat_lahir" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Email</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Email" name="tempat_lahir" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Username</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Username" name="tempat_lahir" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Password</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Password" name="tempat_lahir" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Level</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Level" name="tempat_lahir" required>
+                          </div>
+                      </div>
                     </div>
                     
                     <div class="form-group">

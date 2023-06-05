@@ -58,6 +58,41 @@
                           </div>
                         </div>
 
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="nama_akses">No. Telp</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="telp" name="telp" value="<?= $data['telp'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="nama_akses">Email</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="email" name="email" value="<?= $data['email'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="nama_akses">Username</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="username" name="username" value="<?= $data['username'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="nama_akses">Password</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="password" name="password" value="<?= $data['password'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="nama_akses">Level</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="level" name="level" value="<?= $data['level'] ?>" required>
+                          </div>
+                        </div>
+
                     </div>
 
 
