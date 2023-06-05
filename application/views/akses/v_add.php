@@ -37,31 +37,19 @@
                 <!-- form start -->
                 <form action="<?php echo base_url() ?>akses/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
-                    <div class="form-group">
-                      <div class="row">
-                        <label class="col-md-3 control-label" for="nama_ibu">Nama Pengguna</label>
-                        <div class="input-group col-md-8">
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" required>
-                          </div>
+                    <div class="row">
+                      <div class="form-group">
+                        <label class="col-md-3" for="nama_ibu">Nama Pengguna</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                          <input type="text" class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" required>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="form-group form-inline">
-                      <div class="row">
-                        <label class="col-md-3 control-label" for="ttl">Alamat</label>
-                        <div class="input-group col-md-8">
-                          <div class="input-group" style="padding-right: 6px;">
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Alamat</label>
+                          <div class="input-group col-sm-8 col-md-8">
                             <input type="text" class="form-control" placeholder="Alamat" name="tempat_lahir" required>
                           </div>
-                          <div class="input-group date">
-                            <div class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="text" class="form-control pull-right" id="datepicker" placeholder="Tanggal Lahir" name="tgl_lahir" required autocomplete="off">
-                          </div>
-                        </div>
                       </div>
                     </div>
                     

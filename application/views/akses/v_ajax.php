@@ -15,20 +15,7 @@
     <script type="text/javascript">
       $(document).on("click",".btnhapus",function(){
          var id =$(this).attr("data-id");
-         swal({
-            title: "Peringatan!",
-            text: "Apakah anda ingin menghapus data ini?",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-         })
-            .then((willDelete) => {
-            if (willDelete) {
-               window.location = "<?= base_url() ?>siswa/delete/"+id;
-            } else {
-               swal("Cancelled", "Batal :)", "error");
-            }
-         });
+         alert(id);
       });
 
    </script>

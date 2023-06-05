@@ -32,9 +32,9 @@
                     }
 
                   ?>
-                  <h3 class="box-title">Data Kader</h3>
+                  <h3 class="box-title">Data akses</h3>
                   <div style="padding-top: 10px;">
-                  <p><a href="<?= base_url(); ?>kader/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
+                  <p><a href="<?= base_url(); ?>akses/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
                   </div>
             
                 </div><!-- /.box-header -->
@@ -43,11 +43,7 @@
                       <thead>
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
-                              <th style="width: 15%;text-align: center;">Nama Kader</th>
-                              <th style="width: 15%;text-align: center;">Tempat/Tgl Lahir</th>
-                              <th style="width: 23%;text-align: center;">Alamat</th>
-                              <th style="width: 15%;text-align: center;">Jabatan</th>
-                              <th style="width: 14%;text-align: center;">No. Telp</th>
+                              <th style="width: 15%;text-align: center;">Nama</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -55,29 +51,11 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
-                              <td><?= $row->nama_ibu ?></td>
-                              <td><?= $row->tempat_lahir ?>, <?= $row->tgl_lahir ?></td>
-                              <td><?= $row->alamat ?> Rt <?= $row->rt ?>/Rw <?= $row->rw ?></td>
-                              <td>
-                                  <?php if ($row->jabatan == 0){ ?>
-                                    Ibu Posyandu
-                                  <?php }elseif ($row->jabatan == 1){ ?>
-                                    Ketua
-                                  <?php }elseif ($row->jabatan == 2){ ?>
-                                    Sekretaris
-                                  <?php }elseif ($row->jabatan == 3){ ?>
-                                    Bendahara
-                                  <?php }elseif ($row->jabatan == 4){ ?>
-                                    Anggota
-                                  <?php }else{ ?>
-                                      Ibu Posyandu
-                                  <?php } ?>
-                              </td>
-                              <td><?= $row->No_tlp ?></td>
+                              <td><?= $row->nama_pengguna ?></td>
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>kader/delete/<?= encrypt_urldua($row->id) ?>" method="post">
+                                  <form action="<?= base_url() ?>akses/delete/<?= $row->id_pengguna ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>kader/edit/<?= encrypt_url($row->id) ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>akses/edit/<?= $row->id_pengguna ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>
