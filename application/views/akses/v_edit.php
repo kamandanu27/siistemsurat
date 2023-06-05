@@ -43,7 +43,7 @@
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Nama Pengguna</label>
+                          <label class="col-md-4 control-label" for="nama_pengguna">Nama Pengguna</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_pengguna" name="id_pengguna" value="<?= $data['id_pengguna'] ?>" required>
                               <input type="text" class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" value="<?= $data['nama_pengguna'] ?>" required>
@@ -52,42 +52,42 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Alamat</label>
+                          <label class="col-md-4 control-label" for="alamat">Alamat</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?= $data['alamat'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">No. Telp</label>
+                          <label class="col-md-4 control-label" for="telp">No. Telp</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="telp" name="telp" value="<?= $data['telp'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Email</label>
+                          <label class="col-md-4 control-label" for="email">Email</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="email" name="email" value="<?= $data['email'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Username</label>
+                          <label class="col-md-4 control-label" for="username">Username</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="username" name="username" value="<?= $data['username'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Password</label>
+                          <label class="col-md-4 control-label" for="password">Password</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="password" name="password" value="<?= $data['password'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_akses">Level</label>
+                          <label class="col-md-4 control-label" for="level">Level</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="level" name="level" value="<?= $data['level'] ?>" required>
                           </div>

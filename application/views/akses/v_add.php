@@ -48,42 +48,42 @@
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Alamat</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Alamat" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">No. Telpon</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Telpon" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Telpon" name="telp" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Email</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Email" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Email" name="email" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Username</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Username" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Username" name="username" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Password</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Password" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Password" name="password" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Level</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Level" name="tempat_lahir" required>
+                            <input type="text" class="form-control" placeholder="Level" name="level" required>
                           </div>
                       </div>
                     </div>
