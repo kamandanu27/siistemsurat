@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2023 at 08:36 AM
--- Server version: 5.7.33
--- PHP Version: 7.2.5
+-- Generation Time: Jun 05, 2023 at 09:57 AM
+-- Server version: 8.0.30
+-- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `akses` (
-  `id_pengguna` int(11) NOT NULL,
+  `id_pengguna` int NOT NULL,
   `nama_pengguna` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(12) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `akses` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `level` enum('lurah','sekretaris','admin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `akses`
@@ -60,7 +60,7 @@ CREATE TABLE `disposisi` (
   `bataswaktu` date NOT NULL,
   `status` enum('sudah didisposisi','belum didisosisi') NOT NULL,
   `id_bagian` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -69,17 +69,18 @@ CREATE TABLE `disposisi` (
 --
 
 CREATE TABLE `klasifikasi` (
-  `kode_klasifikasi` int(5) NOT NULL,
+  `kode_klasifikasi` int NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
   `uraian` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `klasifikasi`
 --
 
 INSERT INTO `klasifikasi` (`kode_klasifikasi`, `klasifikasi`, `uraian`) VALUES
-(1, 'as', 'as');
+(3, '03', 'iya'),
+(4, '01', 'oke');
 
 -- --------------------------------------------------------
 
@@ -88,17 +89,19 @@ INSERT INTO `klasifikasi` (`kode_klasifikasi`, `klasifikasi`, `uraian`) VALUES
 --
 
 CREATE TABLE `perangkat` (
-  `id_bagian` char(8) NOT NULL,
+  `id_bagian` int NOT NULL,
   `nama_bagian` varchar(30) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `perangkat`
 --
 
 INSERT INTO `perangkat` (`id_bagian`, `nama_bagian`, `nama`) VALUES
-('01', 'Kasi Pemerintahan', 'Rony tri efendi');
+(1, 'staff', 'alvin'),
+(2, 'Kasi Pemerintahan', 'Rony tri efendi'),
+(3, 'teknisi', 'toma');
 
 -- --------------------------------------------------------
 
@@ -118,7 +121,7 @@ CREATE TABLE `sk` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -127,7 +130,7 @@ CREATE TABLE `sk` (
 --
 
 CREATE TABLE `sm` (
-  `id_sm` char(8) NOT NULL,
+  `id_sm` int NOT NULL,
   `nosurat` varchar(20) NOT NULL,
   `pengirim` varchar(50) NOT NULL,
   `isi` varchar(100) NOT NULL,
@@ -137,8 +140,16 @@ CREATE TABLE `sm` (
   `status` enum('sudah didisposisi','belum didisposisi') NOT NULL,
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
-  `id_pengguna` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_pengguna` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `sm`
+--
+
+INSERT INTO `sm` (`id_sm`, `nosurat`, `pengirim`, `isi`, `sifat`, `tglsurat`, `tglterima`, `status`, `keterangan`, `file`, `id_pengguna`) VALUES
+(1, '231', 'alvin', 'i', '', '2023-06-05', '2023-06-01', '', 'k', 'f', 1),
+(2, '111', 'ijot', 'is', '', '2023-06-05', '2023-06-01', '', 'ket', 'fi', 2);
 
 --
 -- Indexes for dumped tables
@@ -188,13 +199,25 @@ ALTER TABLE `sm`
 -- AUTO_INCREMENT for table `akses`
 --
 ALTER TABLE `akses`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `klasifikasi`
 --
 ALTER TABLE `klasifikasi`
-  MODIFY `kode_klasifikasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode_klasifikasi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `perangkat`
+--
+ALTER TABLE `perangkat`
+  MODIFY `id_bagian` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `sm`
+--
+ALTER TABLE `sm`
+  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
