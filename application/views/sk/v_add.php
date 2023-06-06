@@ -39,15 +39,15 @@
                   <div class="box-body">
                     <div class="row">
                       <div class="form-group">
-                        <label class="col-md-3" for="nama_ibu">No. Surat</label>
+                        <label class="col-md-3" for="no_surat">No. Surat</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="No. Surat" name="nosurat" required>
+                          <input type="text" class="form-control" placeholder="No. Surat" name="no_surat" required>
                         </div>
                       </div>
 
                       <div class="form-group">
 									       <label for="exampleInputEmail1">Klasifikasi:</label>
-							        		<select class="form-control" id="kode_kasifikasi" name="kode_kasifikasi">
+							        		<select class="form-control" id="kode_klasifikasi" name="klasifikasi">
 							      		  	<option value="">Pilih</option>
 								  		      <?php foreach($list_klasifikasi as $row){ ?>
 										        	<option value="<?= $row->kode_klasifikasi ?>"><?= $row->klasifikasi ?></option>
@@ -108,7 +108,7 @@
 									       <label for="exampleInputEmail1">Pengguna:</label>
 							        		<select class="form-control" id="id_pengguna" name="id_pengguna">
 							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_pengguna as $row){ ?>
+								  		      <?php foreach($list_akses as $row){ ?>
 										        	<option value="<?= $row->id_pengguna ?>"><?= $row->nama_pengguna ?></option>
 										        <?php } ?>
 								      	</select>

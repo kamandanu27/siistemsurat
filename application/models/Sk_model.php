@@ -14,11 +14,15 @@ class Sk_model extends CI_Model {
 		if($where == null){
 			$this->db->select('*');
 			$this->db->from('sk');
+			$this->db->join('klasifikasi', 'sk.kode_klasifikasi = klasifikasi.kode_klasifikasi');
+			$this->db->join('akses', 'sk.id_pengguna = akses.id_pengguna');
 			$this->db->order_by('sk.id_sk', 'Asc');
 			$query = $this->db->get();
 		}else{
 			$this->db->select('*');
 			$this->db->from('sk');
+			$this->db->join('klasifikasi', 'sk.kode_klasifikasi = klasifikasi.kode_klasifikasi');
+			$this->db->join('akses', 'sk.id_pengguna = akses.id_pengguna');
 			$this->db->order_by('sk.id_sk', 'Asc');
 			$this->db->where($where);
 			$query = $this->db->get();

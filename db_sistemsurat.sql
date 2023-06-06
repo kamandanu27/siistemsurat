@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2023 at 03:20 AM
+-- Generation Time: Jun 06, 2023 at 06:48 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -113,7 +113,7 @@ INSERT INTO `perangkat` (`id_bagian`, `nama_bagian`, `nama`) VALUES
 CREATE TABLE `sk` (
   `id_sk` int NOT NULL,
   `no_surat` varchar(20) NOT NULL,
-  `kode_klasifikasi` varchar(5) NOT NULL,
+  `kode_klasifikasi` int NOT NULL,
   `isi_ringkasan` varchar(100) NOT NULL,
   `penerima` varchar(50) NOT NULL,
   `tglsurat` date NOT NULL,
@@ -123,6 +123,13 @@ CREATE TABLE `sk` (
   `file` varchar(30) NOT NULL,
   `id_pengguna` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `sk`
+--
+
+INSERT INTO `sk` (`id_sk`, `no_surat`, `kode_klasifikasi`, `isi_ringkasan`, `penerima`, `tglsurat`, `tglcatat`, `sifat`, `keterangan`, `file`, `id_pengguna`) VALUES
+(1, '23', 3, 'ddd', 'saya', '2023-06-06', '2023-06-07', 'Segera', 'aga', 'file', 2);
 
 -- --------------------------------------------------------
 
@@ -149,10 +156,8 @@ CREATE TABLE `sm` (
 --
 
 INSERT INTO `sm` (`id_sm`, `nosurat`, `pengirim`, `isi`, `sifat`, `tglsurat`, `tglterima`, `status`, `keterangan`, `file`, `id_pengguna`) VALUES
-(5, '231', 'alvin', 'i', 'Penting', '2023-06-05', '2023-06-01', 'sudah didisposisi', 'k', 'f', 2),
-(7, '111', 'alvin', 'i', 'Biasa', '2023-06-16', '2023-06-30', 'sudah didisposisi', 'ket', 'fi', 1),
-(8, '23', 'ijot', 'hi', 'Penting', '2023-06-05', '2023-06-06', 'belum didisposisi', 'ok', 'file', 2),
-(9, '231', 'alvin', 'isi', 'Segera', '2023-06-05', '2023-06-08', 'sudah didisposisi', 'ket', 'f', 3);
+(13, '231', 'alvin', 'isi', 'Biasa', '2023-06-16', '2023-06-13', 'belum didisposisi', 'ket', 'file', 1),
+(16, '231', 'toma', 'iya', '', '2023-06-17', '2023-06-01', '', 'ket', 'file', 2);
 
 --
 -- Indexes for dumped tables
@@ -220,13 +225,13 @@ ALTER TABLE `perangkat`
 -- AUTO_INCREMENT for table `sk`
 --
 ALTER TABLE `sk`
-  MODIFY `id_sk` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sm`
 --
 ALTER TABLE `sm`
-  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -8,6 +8,7 @@ class Sk extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Sk_model', 'sk');
 		$this->load->model('Klasifikasi_model', 'klasifikasi');
+		$this->load->model('Akses_model', 'akses');
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -28,6 +29,7 @@ class Sk extends CI_Controller {
 	{
 		$data = array(
 			'list_klasifikasi' 	=> $this->klasifikasi->tabel()->result(),
+			'list_akses' 	=> $this->akses->tabel()->result(),
 			'title'			=> 'SISTEM SURAT',
 			'judul'			=> 'Tambah Data sk',
 			'content'		=> 'sk/v_add',
@@ -47,6 +49,7 @@ class Sk extends CI_Controller {
 
 			$data = array(
 				'list_klasifikasi' 	=> $this->klasifikasi->tabel()->result(),
+				'list_akses' 	=> $this->akses->tabel()->result(),
 				'title'			=> 'SISTEM SURAT',
 				'judul'			=> 'Edit Data sk',
 				'data' 			=> 	$this->sk->detail($id)->row_array(),
@@ -61,7 +64,7 @@ class Sk extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('no_surat', 'required',
+		$this->form_validation->set_rules('sk', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 		if ($this->form_validation->run()) 
@@ -70,7 +73,7 @@ class Sk extends CI_Controller {
 			$data = array(
 				'no_surat'     => $this->input->post('no_surat'),
 				'kode_klasifikasi'   			=> $this->input->post('kode_klasifikasi'),
-				'isi_rintangan' 				=> $this->input->post('isi_rintangan'),
+				'isi_ringkasan' 				=> $this->input->post('isi_ringkasan'),
 				'tglsurat'   			=> $this->input->post('tglsurat'),
 				'tglcatat'    		=> $this->input->post('tglcatat'),
 				'sifat'   		=> $this->input->post('sifat'),
@@ -95,26 +98,28 @@ class Sk extends CI_Controller {
 
 	public function update()
 	{
-		$cek = $this->sk->detail($this->input->post('id_pengguna'))->row_array();
+		$cek = $this->sk->detail($this->input->post('id_sk'))->row_array();
 		if($cek == null){
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('sk'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_pengguna', 'ID Pengguna', 'required',
+				$this->form_validation->set_rules('id_sk', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
 				if ($this->form_validation->run()) 
 				{
 					$data = array(
-						'id_pengguna'		=> $this->input->post('id_pengguna'),
-						'nama_pengguna'     => $this->input->post('nama_pengguna'),
-						'alamat'   			=> $this->input->post('alamat'),
-						'telp' 				=> $this->input->post('telp'),
-						'email'   			=> $this->input->post('email'),
-						'username'    		=> $this->input->post('username'),
-						'password'   		=> $this->input->post('password'),
-						'level'       		=> $this->input->post('level')
+						'id_sk'		=> $this->input->post('id_sk'),
+						'no_surat'     => $this->input->post('no_surat'),
+						'kode_klasifikasi'   			=> $this->input->post('kode_klasifikasi'),
+						'isi_ringkasan' 				=> $this->input->post('isi_ringkasan'),
+						'tglsurat'   			=> $this->input->post('tglsurat'),
+						'tglcatat'    		=> $this->input->post('tglcatat'),
+						'sifat'   		=> $this->input->post('sifat'),
+						'keterangan'       		=> $this->input->post('keterangan'),
+						'file'       		=> $this->input->post('file'),
+						'id_pengguna'       		=> $this->input->post('id_pengguna')
 					);
 					$this->sk->update($data);
 			
@@ -140,7 +145,7 @@ class Sk extends CI_Controller {
 		}else{
 
 			$data = array(
-				'id_pengguna'	=> $id
+				'id_sk'	=> $id
 			);
 			
 			$this->sk->delete($data);

@@ -44,7 +44,7 @@
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
                               <th style="width: 15%;text-align: center;">No. Surat</th>
-                              <th style="width: 15%;text-align: center;">Kode Klasifikasi</th>
+                              
                               <th style="width: 15%;text-align: center;">Isi Ringkasan</th>
                               <th style="width: 15%;text-align: center;">Penerima</th>
                               <th style="width: 15%;text-align: center;">Tanggal Surat</th>
@@ -61,7 +61,7 @@
                           <tr>
                               <td><?= $no++ ?></td>
                               <td><?= $row->no_surat ?></td>
-                              <td><?= $row->kode_klasifikasi ?></td>
+                              
                               <td><?= $row->isi_ringkasan ?></td>
                               <td><?= $row->penerima ?></td>
                               <td><?= $row->tglsurat ?></td>
