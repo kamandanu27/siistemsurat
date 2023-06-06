@@ -32,9 +32,9 @@
                     }
 
                   ?>
-                  <h3 class="box-title">Data Sk</h3>
+                  <h3 class="box-title">Data Disposisi</h3>
                   <div style="padding-top: 10px;">
-                  <p><a href="<?= base_url(); ?>sk/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
+                  <p><a href="<?= base_url(); ?>disposisi/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
                   </div>
             
                 </div><!-- /.box-header -->
@@ -43,16 +43,13 @@
                       <thead>
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
-                              <th style="width: 15%;text-align: center;">No. Surat</th>
-                              <th style="width: 15%;text-align: center;">Klasifikasi</th>
-                              <th style="width: 15%;text-align: center;">Isi Ringkasan</th>
-                              <th style="width: 15%;text-align: center;">penerima</th>
-                              <th style="width: 15%;text-align: center;">Tanggal Surat</th>
-                              <th style="width: 15%;text-align: center;">Tanggal Catat</th>
+                              <th style="width: 15%;text-align: center;">Id Sm</th>
+                              <th style="width: 15%;text-align: center;">Isi Disposisi</th>
                               <th style="width: 15%;text-align: center;">Sifat</th>
-                              <th style="width: 15%;text-align: center;">Keterangan</th>
-                              <th style="width: 13%;text-align: center;">File</th>
-                              <th style="width: 13%;text-align: center;">Pengguna</th>
+                              <th style="width: 15%;text-align: center;">Tanggal Disposisi</th>
+                              <th style="width: 15%;text-align: center;">Batas Waktu</th>
+                              <th style="width: 13%;text-align: center;">Status</th>
+                              <th style="width: 13%;text-align: center;">Nama Bagian</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -60,21 +57,18 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
-                              <td><?= $row->no_surat ?></td>
-                              <td><?= $row->klasifikasi ?></td>
-                              <td><?= $row->isi_ringkasan ?></td>
-                              <td><?= $row->penerima ?></td>
-                              <td><?= $row->tglsurat ?></td>
-                              <td><?= $row->tglcatat ?></td>
+                              <td><?= $row->id_sm ?></td>
+                              <td><?= $row->isi_disposisi ?></td>
                               <td><?= $row->sifat ?></td>
-                              <td><?= $row->keterangan ?></td>
-                              <td><?= $row->file ?></td>
-                              <td><?= $row->nama_pengguna ?></td>
+                              <td><?= $row->tgldisposisi ?></td>
+                              <td><?= $row->bataswaktu ?></td>
+                              <td><?= $row->status ?></td>
+                              <td><?= $row->nama_bagian ?></td>
 
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>sk/delete/<?= $row->id_sk ?>" method="post">
+                                  <form action="<?= base_url() ?>disposisi/delete/<?= $row->id_disposisi ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>sk/edit/<?= $row->id_sk ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>disposisi/edit/<?= $row->id_disposisi ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>

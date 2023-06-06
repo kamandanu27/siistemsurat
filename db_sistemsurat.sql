@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2023 at 06:48 AM
+-- Generation Time: Jun 06, 2023 at 09:32 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -36,7 +36,7 @@ CREATE TABLE `akses` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `level` enum('lurah','sekretaris','admin') NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `akses`
@@ -44,7 +44,8 @@ CREATE TABLE `akses` (
 
 INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, `username`, `password`, `level`) VALUES
 (1, 'Nengah Ari', 'gadungan', '081532764372', 'nengah@gmail.com', 'admin', '12345', 'admin'),
-(2, 'saya', 'disini', '0889', 'ada', 'admin', '12345', 'admin');
+(2, 'saya', 'disini', '0889', 'ada', 'admin', '12345', 'admin'),
+(3, 'toma', 'cbc', '0889', 'cbc@dad.v', 'admin', '123', 'sekretaris');
 
 -- --------------------------------------------------------
 
@@ -53,15 +54,23 @@ INSERT INTO `akses` (`id_pengguna`, `nama_pengguna`, `alamat`, `telp`, `email`, 
 --
 
 CREATE TABLE `disposisi` (
-  `id_disposisi` char(8) NOT NULL,
-  `id_sm` char(8) NOT NULL,
+  `id_disposisi` int NOT NULL,
+  `id_sm` int NOT NULL,
   `isi_disposisi` varchar(100) NOT NULL,
   `sifat` enum('Biasa','Segera','Penting','Rahasia') NOT NULL,
   `tgldisposisi` date NOT NULL,
   `bataswaktu` date NOT NULL,
   `status` enum('sudah didisposisi','belum didisosisi') NOT NULL,
-  `id_bagian` char(8) NOT NULL
-);
+  `id_bagian` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `disposisi`
+--
+
+INSERT INTO `disposisi` (`id_disposisi`, `id_sm`, `isi_disposisi`, `sifat`, `tgldisposisi`, `bataswaktu`, `status`, `id_bagian`) VALUES
+(1, 13, 'adfd', '', '2023-06-16', '2023-06-23', '', 1),
+(3, 13, 'ye', '', '2023-06-29', '2023-05-31', '', 2);
 
 -- --------------------------------------------------------
 
@@ -73,15 +82,15 @@ CREATE TABLE `klasifikasi` (
   `kode_klasifikasi` int NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
   `uraian` varchar(100) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `klasifikasi`
 --
 
 INSERT INTO `klasifikasi` (`kode_klasifikasi`, `klasifikasi`, `uraian`) VALUES
-(3, '03', 'iya'),
-(4, '01', 'oke');
+(3, 'aaaaa', 'iya'),
+(4, 'ffsds', 'oke');
 
 -- --------------------------------------------------------
 
@@ -93,7 +102,7 @@ CREATE TABLE `perangkat` (
   `id_bagian` int NOT NULL,
   `nama_bagian` varchar(30) NOT NULL,
   `nama` varchar(50) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `perangkat`
@@ -122,14 +131,16 @@ CREATE TABLE `sk` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` int NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `sk`
 --
 
 INSERT INTO `sk` (`id_sk`, `no_surat`, `kode_klasifikasi`, `isi_ringkasan`, `penerima`, `tglsurat`, `tglcatat`, `sifat`, `keterangan`, `file`, `id_pengguna`) VALUES
-(1, '23', 3, 'ddd', 'saya', '2023-06-06', '2023-06-07', 'Segera', 'aga', 'file', 2);
+(1, '23', 0, 'ddd', 'saya', '2023-06-06', '2023-06-07', 'Segera', 'aga', 'file', 1),
+(2, '112', 3, 'aa', 'dagj', '2023-05-30', '2023-06-28', '', 'ket', 'q', 1),
+(3, 'dqad', 3, 'sds', 'qqq', '2023-06-24', '2023-06-22', '', 'fwsd', '342y74r5f', 1);
 
 -- --------------------------------------------------------
 
@@ -149,15 +160,15 @@ CREATE TABLE `sm` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` int NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `sm`
 --
 
 INSERT INTO `sm` (`id_sm`, `nosurat`, `pengirim`, `isi`, `sifat`, `tglsurat`, `tglterima`, `status`, `keterangan`, `file`, `id_pengguna`) VALUES
-(13, '231', 'alvin', 'isi', 'Biasa', '2023-06-16', '2023-06-13', 'belum didisposisi', 'ket', 'file', 1),
-(16, '231', 'toma', 'iya', '', '2023-06-17', '2023-06-01', '', 'ket', 'file', 2);
+(13, 'mik', 'alvin', 'isi', 'Biasa', '2023-06-16', '2023-06-13', 'belum didisposisi', 'ket', 'file', 2),
+(17, '111', 'ijot', 'isi', '', '2023-06-15', '2023-06-21', '', 'k', 'file', 1);
 
 --
 -- Indexes for dumped tables
@@ -207,7 +218,13 @@ ALTER TABLE `sm`
 -- AUTO_INCREMENT for table `akses`
 --
 ALTER TABLE `akses`
-  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pengguna` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `disposisi`
+--
+ALTER TABLE `disposisi`
+  MODIFY `id_disposisi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `klasifikasi`
@@ -225,13 +242,13 @@ ALTER TABLE `perangkat`
 -- AUTO_INCREMENT for table `sk`
 --
 ALTER TABLE `sk`
-  MODIFY `id_sk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sm`
 --
 ALTER TABLE `sm`
-  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_sm` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

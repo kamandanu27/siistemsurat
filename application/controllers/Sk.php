@@ -73,13 +73,14 @@ class Sk extends CI_Controller {
 			$data = array(
 				'no_surat'     => $this->input->post('no_surat'),
 				'kode_klasifikasi'   			=> $this->input->post('kode_klasifikasi'),
-				'isi_ringkasan' 				=> $this->input->post('isi_ringkasan'),
-				'tglsurat'   			=> $this->input->post('tglsurat'),
-				'tglcatat'    		=> $this->input->post('tglcatat'),
-				'sifat'   		=> $this->input->post('sifat'),
+				'isi_ringkasan'   			=> $this->input->post('isi_ringkasan'),
+				'penerima'    		=> $this->input->post('penerima'),
+				'tglsurat'   		=> $this->input->post('tglsurat'),
+				'tglcatat'       		=> $this->input->post('tglcatat'),
+				'sifat'       		=> $this->input->post('sifat'),
 				'keterangan'       		=> $this->input->post('keterangan'),
 				'file'       		=> $this->input->post('file'),
-				'id_pengguna'       		=> $this->input->post('id_pengguna')
+				'id_pengguna'   		=> $this->input->post('id_pengguna')
 			);
 
 			$q = $this->sk->insert($data);
@@ -104,31 +105,24 @@ class Sk extends CI_Controller {
 			redirect(base_url('sk'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_sk', 'required',
-				array( 'required'  => '%s harus diisi!'));
+			$data = array(
+				'id_sk'			=> $this->input->post('id_sk'),
+				'no_surat'     => $this->input->post('no_surat'),
+				'kode_klasifikasi'   			=> $this->input->post('kode_klasifikasi'),
+				'isi_ringkasan'   			=> $this->input->post('isi_ringkasan'),
+				'penerima'    		=> $this->input->post('penerima'),
+				'tglsurat'   		=> $this->input->post('tglsurat'),
+				'tglcatat'       		=> $this->input->post('tglcatat'),
+				'sifat'       		=> $this->input->post('sifat'),
+				'keterangan'       		=> $this->input->post('keterangan'),
+				'file'       		=> $this->input->post('file'),
+				'id_pengguna'   		=> $this->input->post('id_pengguna')
+			);
+			$this->sk->update($data);
+	
+			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+			redirect(base_url('sk'),'refresh');
 
-				if ($this->form_validation->run()) 
-				{
-					$data = array(
-						'id_sk'		=> $this->input->post('id_sk'),
-						'no_surat'     => $this->input->post('no_surat'),
-						'kode_klasifikasi'   			=> $this->input->post('kode_klasifikasi'),
-						'isi_ringkasan' 				=> $this->input->post('isi_ringkasan'),
-						'tglsurat'   			=> $this->input->post('tglsurat'),
-						'tglcatat'    		=> $this->input->post('tglcatat'),
-						'sifat'   		=> $this->input->post('sifat'),
-						'keterangan'       		=> $this->input->post('keterangan'),
-						'file'       		=> $this->input->post('file'),
-						'id_pengguna'       		=> $this->input->post('id_pengguna')
-					);
-					$this->sk->update($data);
-			
-					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					redirect(base_url('sk'),'refresh');
-				}else{
-					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Belum Lengkap');
-					redirect(base_url('sk/edit/'.$this->input->post('id')),'refresh');
-				}
 
 		}
 

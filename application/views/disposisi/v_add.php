@@ -35,52 +35,24 @@
                 ?>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>sk/insert" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>disposisi/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="row">
 
                       <div class="form-group">
-                        <label class="col-md-3" for="no_surat">No. Surat</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="No. Surat" name="no_surat" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-									       <label for="exampleInputEmail1">Klasifikasi:</label>
-							        		<select class="form-control" id="kode_klasifikasi" name="kode_klasifikasi">
+									       <label for="exampleInputEmail1">Id SM:</label>
+							        		<select class="form-control" id="id_sm" name="id_sm">
 							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_klasifikasi as $row){ ?>
-										        	<option value="<?= $row->kode_klasifikasi ?>"><?= $row->klasifikasi ?></option>
+								  		      <?php foreach($list_sm as $row){ ?>
+										        	<option value="<?= $row->id_sm ?>"><?= $row->id_sm ?></option>
 										        <?php } ?>
 								      	</select>
 							      	</div>
 
                       <div class="form-group">
-                        <label class="col-md-3" for="isi_ringkasan">Isi Ringkasan</label>
+                        <label class="col-md-3" for="isi_disposisi">Isi Disposisi</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Isi Ringkasan" name="isi_ringkasan" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="penerima">Penerima</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Penerima" name="penerima" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="tglsurat">Tanggal Surat</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="date" class="form-control" placeholder="Tanggal Surat" name="tglsurat" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="tglcatat">Tanggal Catat</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="date" class="form-control" placeholder="Tanggal Catat" name="tglcatat" required>
+                          <input type="text" class="form-control" placeholder="Isi Disposisi" name="isi_disposisi" required>
                         </div>
                       </div>
 
@@ -92,25 +64,32 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="col-md-3" for="keterangan">Keterangan</label>
+                        <label class="col-md-3" for="tgldisposisi">Tanggal Disposisi</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Keterangan" name="keterangan" required>
+                          <input type="date" class="form-control" placeholder="Tanggal Disposisi" name="tgldisposisi" required>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="col-md-3" for="file">File</label>
+                        <label class="col-md-3" for="bataswaktu">Batas Waktu</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="File" name="file" required>
+                          <input type="date" class="form-control" placeholder="Isi Disposisi" name="bataswaktu" required>
                         </div>
                       </div>
 
                       <div class="form-group">
-									       <label for="exampleInputEmail1">Pengguna:</label>
-							        		<select class="form-control" id="id_pengguna" name="id_pengguna">
+                        <label class="col-md-3" for="status">Status</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                          <input type="text" class="form-control" placeholder="Status" name="status" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+									       <label for="exampleInputEmail1">Bagian:</label>
+							        		<select class="form-control" id="id_bagian" name="id_bagian">
 							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_akses as $row){ ?>
-										        	<option value="<?= $row->id_pengguna ?>"><?= $row->nama_pengguna ?></option>
+								  		      <?php foreach($list_perangkat as $row){ ?>
+										        	<option value="<?= $row->id_bagian ?>"><?= $row->nama_bagian ?></option>
 										        <?php } ?>
 								      	</select>
 							      	</div>
@@ -122,7 +101,7 @@
                         <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
-                          <a href="<?= base_url() ?>sk" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>disposisi" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

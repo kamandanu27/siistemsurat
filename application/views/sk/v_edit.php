@@ -40,10 +40,10 @@
                 <!-- form start -->
                 <form action="<?php echo base_url() ?>sk/update" method="post" enctype="multipart/form-data">
                   <div class="box-body">
-
                     <div class="row">
+
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nosurat">No. Surat</label>
+                          <label class="col-md-4 control-label" for="no_surat">No. Surat</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_sk" name="id_sk" value="<?= $data['id_sk'] ?>" required>
                               <input type="text" class="form-control" placeholder="No. Surat" name="no_surat" value="<?= $data['no_surat'] ?>" required>
@@ -52,24 +52,24 @@
                         </div>
 
                         <div class="form-group">
-									       <label for="exampleInputEmail1">Klasifikasi:</label>
-							        		<select class="form-control" id="kode_klasifikasi" name="klasifikasi">
-							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_klasifikasi as $row){ ?>
-										        	<option value="<?= $row->kode_klasifikasi ?>"><?= $row->klasifikasi ?></option>
-										        <?php } ?>
-								        	</select>
-							      	  </div>
+                          <label for="exampleInputEmail1">Klasifikasi</label>
+                          <select class="form-control" id="kode_klasifikasi" name="kode_klasifikasi">
+									            <option value="">Pilih</option>
+										          <?php foreach($list_klasifikasi as $row){ ?>
+									        		  <option value="<?= $row->kode_klasifikasi ?>"><?= $row->klasifikasi ?></option>
+									          	<?php } ?>
+								          	</select>
+							        	</div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="isi_ringkasan">Isi_ringkasan</label>
+                          <label class="col-md-4 control-label" for="isi_ringkasan">Isi Ringkasan</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="Isi_ringkasan" name="isi_ringkasan" value="<?= $data['isi_ringkasan'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Isi Ringkasan" name="isi_ringkasan" value="<?= $data['isi_ringkasan'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="sifat">Penerima</label>
+                          <label class="col-md-4 control-label" for="penerima">Penerima</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Penerima" name="penerima" value="<?= $data['penerima'] ?>" required>
                           </div>
@@ -78,19 +78,19 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="tglsurat">Tanggal Surat</label>
                           <div class="input-group col-md-8">
-                              <input type="date" class="form-control" placeholder="Tanggal Surat" name="tglsurat" value="<?= $data['tglsurat'] ?>" required>
+                              <input type="dater" class="form-control" placeholder="Tanggal Surat" name="tglsurat" value="<?= $data['tglsurat'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="tglcatat">Tangal Catat</label>
+                          <label class="col-md-4 control-label" for="tglcatat">Tanggal Catat</label>
                           <div class="input-group col-md-8">
-                              <input type="date" class="form-control" placeholder="Tanggal catat" name="tglcatat" value="<?= $data['tglcatat'] ?>" required>
+                              <input type="dater" class="form-control" placeholder="Tanggal Catat" name="tglcatat" value="<?= $data['tglcatat'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="penerima">Sifat</label>
+                          <label class="col-md-4 control-label" for="sifat">Sifat</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Sifat" name="sifat" value="<?= $data['sifat'] ?>" required>
                           </div>
