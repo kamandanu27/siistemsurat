@@ -51,7 +51,6 @@ class Sm_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('sm');
-		$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
 		$this->db->where('id_sm', $id);
 		$query = $this->db->get();
 		return $query;
