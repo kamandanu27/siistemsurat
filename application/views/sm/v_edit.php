@@ -111,7 +111,7 @@
                           <label for="exampleInputEmail1">Pengguna</label>
                           <select class="form-control" id="id_pengguna" name="id_pengguna">
 									            <option value="">Pilih</option>
-										          <?php foreach($list_pengguna as $row){ ?>
+										          <?php foreach($list_akses as $row){ ?>
 									        		  <option value="<?= $row->id_pengguna ?>"><?= $row->nama_pengguna ?></option>
 									          	<?php } ?>
 								          	</select>

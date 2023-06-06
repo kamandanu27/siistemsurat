@@ -46,11 +46,14 @@
                       </div>
 
                       <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">Kode Klasifikasi</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Kode Klasifikasi" name="kode_klasifikasi" required>
-                          </div>
-                      </div>
+									       <label for="exampleInputEmail1">Klasifikasi:</label>
+							        		<select class="form-control" id="kode_kasifikasi" name="kode_kasifikasi">
+							      		  	<option value="">Pilih</option>
+								  		      <?php foreach($list_klasifikasi as $row){ ?>
+										        	<option value="<?= $row->kode_klasifikasi ?>"><?= $row->klasifikasi ?></option>
+										        <?php } ?>
+								      	</select>
+							      	</div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Isi Ringkasan</label>

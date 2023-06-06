@@ -61,7 +61,7 @@ class Sm extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('nosurat', 'Nama sm', 'required',
+		$this->form_validation->set_rules('sm', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 		if ($this->form_validation->run()) 
@@ -102,7 +102,7 @@ class Sm extends CI_Controller {
 			redirect(base_url('sm'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_sm', 'ID sm', 'required',
+				$this->form_validation->set_rules('id_sm', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
 				if ($this->form_validation->run()) 

@@ -52,7 +52,7 @@
                               <th style="width: 13%;text-align: center;">Sifat</th>
                               <th style="width: 13%;text-align: center;">Keterangan</th>
                               <th style="width: 13%;text-align: center;">File</th>
-                              <th style="width: 13%;text-align: center;">Id Pengguna</th>
+                              <th style="width: 13%;text-align: center;">Pengguna</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -72,9 +72,9 @@
                               <td><?= $row->id_pengguna ?></td>
 
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>sk/delete/<?= $row->id_sm ?>" method="post">
+                                  <form action="<?= base_url() ?>sk/delete/<?= $row->id_sk ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>sk/edit/<?= $row->id_sm ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>sk/edit/<?= $row->id_sk ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>
