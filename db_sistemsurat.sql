@@ -36,7 +36,7 @@ CREATE TABLE `akses` (
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `level` enum('lurah','sekretaris','admin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `akses`
@@ -61,7 +61,7 @@ CREATE TABLE `disposisi` (
   `bataswaktu` date NOT NULL,
   `status` enum('sudah didisposisi','belum didisosisi') NOT NULL,
   `id_bagian` char(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `klasifikasi` (
   `kode_klasifikasi` int NOT NULL,
   `klasifikasi` varchar(50) NOT NULL,
   `uraian` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `klasifikasi`
@@ -93,7 +93,7 @@ CREATE TABLE `perangkat` (
   `id_bagian` int NOT NULL,
   `nama_bagian` varchar(30) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `perangkat`
@@ -122,7 +122,7 @@ CREATE TABLE `sk` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `sk`
@@ -149,7 +149,7 @@ CREATE TABLE `sm` (
   `keterangan` varchar(100) NOT NULL,
   `file` varchar(30) NOT NULL,
   `id_pengguna` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `sm`

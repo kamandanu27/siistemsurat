@@ -45,7 +45,7 @@
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="nosurat">No. Surat</label>
                           <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_sm" name="id_sm" value="<?= $data['id_sm'] ?>" required>
+                              <input class="form-control" type="text" id="id_sm" name="id_sm" value="<?= $data['id_sm'] ?>" required>
                               <input type="text" class="form-control" placeholder="No. Surat" name="nosurat" value="<?= $data['nosurat'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>

@@ -102,32 +102,24 @@ class Sm extends CI_Controller {
 			redirect(base_url('sm'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_sm', 'required',
-				array( 'required'  => '%s harus diisi!'));
+			$data = array(
+				'id_sm'			=> $this->input->post('id_sm'),
+				'nosurat'     	=> $this->input->post('nosurat'),
+				'pengirim'   			=> $this->input->post('pengirim'),
+				'isi' 				=> $this->input->post('isi'),
+				'sifat'   			=> $this->input->post('sifat'),
+				'tglsurat'    		=> $this->input->post('tglsurat'),
+				'tglterima'   		=> $this->input->post('tglterima'),
+				'status'       		=> $this->input->post('status'),
+				'keterangan'   		=> $this->input->post('keterangan'),
+				'file'   		=> $this->input->post('file'),
+				'id_pengguna'   		=> $this->input->post('id_pengguna')
+			);
+			$this->sm->update($data);
+	
+			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+			redirect(base_url('sm'),'refresh');
 
-				if ($this->form_validation->run()) 
-				{
-					$data = array(
-						'id_sm'		=> $this->input->post('id_sm'),
-						'nosurat'     => $this->input->post('nosurat'),
-						'pengirim'   			=> $this->input->post('pengirim'),
-						'isi' 				=> $this->input->post('isi'),
-						'sifat'   			=> $this->input->post('sifat'),
-						'tglsurat'    		=> $this->input->post('tglsurat'),
-						'tglterima'   		=> $this->input->post('tglterima'),
-						'status'       		=> $this->input->post('status'),
-						'keterangan'   		=> $this->input->post('keterangan'),
-						'file'   		=> $this->input->post('file'),
-						'id_pengguna'   		=> $this->input->post('id_pengguna')
-					);
-					$this->sm->update($data);
-			
-					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					redirect(base_url('sm'),'refresh');
-				}else{
-					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Belum Lengkap');
-					redirect(base_url('sm/edit/'.$this->input->post('id')),'refresh');
-				}
 
 		}
 
