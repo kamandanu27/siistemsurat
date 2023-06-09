@@ -38,25 +38,49 @@
                 
 
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>perangkat/update" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>pengaturan/update" method="post" enctype="multipart/form-data">
                   <div class="box-body">
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_bagian">Nama Bagian</label>
+                          <label class="col-md-4 control-label" for="ttl">Visi</label>
                           <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_bagian" name="id_bagian" value="<?= $data['id_bagian'] ?>" required>
-                              <input type="text" class="form-control" placeholder="Nama Bagian" name="nama_bagian" value="<?= $data['nama_bagian'] ?>" required>
+                              <input class="form-control" type="hidden" id="id_pengaturan" name="id_pengaturan" value="<?= $data['id_pengaturan'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Visi" name="visi" value="<?= $data['visi'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama">Nama</label>
+                          <label class="col-md-4 control-label" for="ttl">Misi</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?= $data['nama'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Misi" name="misi" value="<?= $data['misi'] ?>" required>
                           </div>
                         </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="ttl">Struktur Organisasi</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="Struktur Organisasi" name="struktur_organisasi" value="<?= $data['struktur_organisasi'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="ttl">Kontak</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="Kontak" name="kontak" value="<?= $data['kontak'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Admin</label>
+                          <select class="form-control" id="id_admin" name="id_admin">
+									            <option value="">Pilih</option>
+										          <?php foreach($list_admin as $row){ ?>
+									        		  <option value="<?= $row->id_admin ?>"><?= $row->nama_admin ?></option>
+									          	<?php } ?>
+								          	</select>
+							        	</div>
 
                     </div>
 
@@ -67,7 +91,7 @@
                         <label class="col-md-4 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
-                          <a href="<?= base_url() ?>perangkat" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>admin" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

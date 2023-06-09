@@ -32,9 +32,9 @@
                     }
 
                   ?>
-                  <h3 class="box-title">Data Perangkat</h3>
+                  <h3 class="box-title">Data Admin</h3>
                   <div style="padding-top: 10px;">
-                  <p><a href="<?= base_url(); ?>perangkat/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
+                  <p><a href="<?= base_url(); ?>admin/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
                   </div>
             
                 </div><!-- /.box-header -->
@@ -43,8 +43,8 @@
                       <thead>
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
-                              <th style="width: 15%;text-align: center;">Nama Bagian</th>
-                              <th style="width: 15%;text-align: center;">Nama</th>
+                              <th style="width: 15%;text-align: center;">Nama Admin</th>
+                              <th style="width: 15%;text-align: center;">Email</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -52,13 +52,13 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
-                              <td><?= $row->nama_bagian ?></td>
-                              <td><?= $row->nama ?></td>
+                              <td><?= $row->nama_admin ?></td>
+                              <td><?= $row->email_admin ?></td>
 
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>perangkat/delete/<?= $row->id_bagian ?>" method="post">
+                                  <form action="<?= base_url() ?>admin/delete/<?= $row->id_admin ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>perangkat/edit/<?= $row->id_bagian ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>admin/edit/<?= $row->id_admin ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>

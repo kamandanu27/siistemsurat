@@ -38,58 +38,37 @@
                 
 
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>akses/update" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>skema/update" method="post" enctype="multipart/form-data">
                   <div class="box-body">
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_pengguna">Nama Pengguna</label>
+                          <label class="col-md-4 control-label" for="kode_skema">Kode</label>
                           <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_pengguna" name="id_pengguna" value="<?= $data['id_pengguna'] ?>" required>
-                              <input type="text" class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" value="<?= $data['nama_pengguna'] ?>" required>
+                              <input class="form-control" type="hidden" id="id_skema" name="id_skema" value="<?= $data['id_skema'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Kode Skema" name="kode_skema" value="<?= $data['kode_skema'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="alamat">Alamat</label>
+                          <label class="col-md-4 control-label" for="nama_skema">Nama</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?= $data['alamat'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Nama Skema" name="nama_skema" value="<?= $data['nama_skema'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="telp">No. Telp</label>
+                          <label class="col-md-4 control-label" for="apl01">apl01</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="telp" name="telp" value="<?= $data['telp'] ?>" required>
+                              <input type="text" class="form-control" placeholder="apl01" name="apl01" value="<?= $data['apl01'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="email">Email</label>
+                          <label class="col-md-4 control-label" for="apl02">apl02</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="email" name="email" value="<?= $data['email'] ?>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="username">Username</label>
-                          <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="username" name="username" value="<?= $data['username'] ?>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="password">Password</label>
-                          <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="password" name="password" value="<?= $data['password'] ?>" required>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="level">Level</label>
-                          <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="level" name="level" value="<?= $data['level'] ?>" required>
+                              <input type="text" class="form-control" placeholder="apl02" name="apl02" value="<?= $data['apl02'] ?>" required>
                           </div>
                         </div>
 
@@ -102,7 +81,7 @@
                         <label class="col-md-4 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
-                          <a href="<?= base_url() ?>akses" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>skema" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

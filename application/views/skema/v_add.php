@@ -35,29 +35,45 @@
                 ?>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>perangkat/insert" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>skema/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="row">
                       <div class="form-group">
-                        <label class="col-md-3" for="nama_ibu">Nama Bagian</label>
+                        <label class="col-md-3" for="ttl">Kode</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Nama Bagian" name="nama_bagian" required>
+                          <input type="text" class="form-control" placeholder="Kode Skema" name="kode_skema" required>
                         </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Nama</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                            <input type="text" class="form-control" placeholder="Nama Skema" name="nama_skema" required>
                           </div>
                       </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">apl01</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="apl01" name="apl01" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">apl02</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="apl02" name="apl02" required>
+                          </div>
+                      </div>
+
+                    </div>
                     
                     <div class="form-group">
                       <div class="row">
                         <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
-                          <a href="<?= base_url() ?>perangkat" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>skema" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sm_model extends CI_Model {
+class Skema_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -13,15 +13,13 @@ class Sm_model extends CI_Model {
 	{
 		if($where == null){
 			$this->db->select('*');
-			$this->db->from('sm');
-			$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
-			$this->db->order_by('sm.id_sm', 'Asc');
+			$this->db->from('tbl_skema');
+			$this->db->order_by('tbl_skema.id_skema', 'Asc');
 			$query = $this->db->get();
 		}else{
 			$this->db->select('*');
-			$this->db->from('sm');
-			$this->db->join('akses', 'sm.id_pengguna = akses.id_pengguna');
-			$this->db->order_by('sm.id_sm', 'Asc');
+			$this->db->from('tbl_skema');
+			$this->db->order_by('tbl_skema.id_skema', 'Asc');
 			$this->db->where($where);
 			$query = $this->db->get();
 		}
@@ -32,7 +30,7 @@ class Sm_model extends CI_Model {
 	public function cekpengguna($where)
 	{
 		$this->db->select('*');
-		$this->db->from('sm');
+		$this->db->from('tbl_skema');
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query;
@@ -42,7 +40,7 @@ class Sm_model extends CI_Model {
 	public function jumlah_pengguna()
     {
         $this->db->select('count(id) as j_pengguna');
-		$this->db->from('sm');
+		$this->db->from('tbl_skema');
 		$query = $this->db->get()->row();
 		return $query->j_pengguna;
     }
@@ -50,8 +48,8 @@ class Sm_model extends CI_Model {
 	public function detail($id)
 	{
 		$this->db->select('*');
-		$this->db->from('sm');
-		$this->db->where('id_sm', $id);
+		$this->db->from('tbl_skema');
+		$this->db->where('id_skema', $id);
 		$query = $this->db->get();
 		return $query;
 	}
@@ -59,7 +57,7 @@ class Sm_model extends CI_Model {
 	public function cek_username($username)
 	{
 		$this->db->select('*');
-		$this->db->from('sm');
+		$this->db->from('tbl_skema');
 		$this->db->where('email', $username);
 		$query = $this->db->get();
 		return $query->num_rows();
@@ -71,10 +69,10 @@ class Sm_model extends CI_Model {
 		$username = $this->db->escape_str($username);
 		$password = $this->db->escape_str($enpass);
 		$this->db->select('*');
-		$this->db->from('sm');
+		$this->db->from('tbl_skema');
 		$this->db->where(array(
-			'sm.email' => $username,
-			'sm.password' => sha1($password)
+			'tbl_skema.email' => $username,
+			'tbl_skema.password' => sha1($password)
 		));
 		$query = $this->db->get();
 		return $query->row();
@@ -82,19 +80,19 @@ class Sm_model extends CI_Model {
 
 	public function insert($data)
 	{
-		$this->db->insert('sm', $data);
+		$this->db->insert('tbl_skema', $data);
 	}
 
 	public function update($data)
 	{
-		$this->db->where('id_sm', $data['id_sm']);
-		$this->db->update('sm', $data);
+		$this->db->where('id_skema', $data['id_skema']);
+		$this->db->update('tbl_skema', $data);
 	}
 
 	public function delete($data)
 	{
-		$this->db->where('id_sm', $data['id_sm']);
-		$this->db->delete('sm');
+		$this->db->where('id_skema', $data['id_skema']);
+		$this->db->delete('tbl_skema');
 	}
 
 

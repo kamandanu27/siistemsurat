@@ -35,55 +35,27 @@
                 ?>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>akses/insert" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>admin/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="row">
                       <div class="form-group">
-                        <label class="col-md-3" for="nama_ibu">Nama Pengguna</label>
+                        <label class="col-md-3" for="nama_admin">Nama</label>
                           <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" required>
+                          <input type="text" class="form-control" placeholder="Nama Admin" name="nama_admin" required>
                         </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">Alamat</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">No. Telpon</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Telpon" name="telp" required>
-                          </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Email</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Email" name="email" required>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">Username</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Username" name="username" required>
+                            <input type="email" class="form-control" placeholder="Email" name="email_admin" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Password</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Password" name="password" required>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">Level</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Level" name="level" required>
+                            <input type="text" class="form-control" placeholder="Password" name="password_admin" required>
                           </div>
                       </div>
                     </div>
@@ -93,7 +65,7 @@
                         <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
-                          <a href="<?= base_url() ?>akses" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>admin" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>
