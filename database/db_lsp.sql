@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 09, 2023 at 06:58 AM
+-- Generation Time: Jun 09, 2023 at 09:01 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -42,6 +42,60 @@ INSERT INTO `tbl_admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admi
 (1, 'alvin', 'abc@gmail.com', '12345'),
 (4, 'ijot', 'abc@gmail.com', '765'),
 (5, 'toma', 'fgh@gmail.com', '12345');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_asesi`
+--
+
+CREATE TABLE `tbl_asesi` (
+  `id_asesi` int NOT NULL,
+  `nim_asesi` varchar(50) NOT NULL,
+  `nik_asesi` varchar(50) NOT NULL,
+  `nama_asesi` varchar(50) NOT NULL,
+  `alamat_asesi` varchar(50) NOT NULL,
+  `notlp_asesi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `jeniskelamin_asesi` varchar(50) NOT NULL,
+  `agama_asesi` varchar(50) NOT NULL,
+  `tempatlahir_asesi` varchar(50) NOT NULL,
+  `tanggallahir_asesi` varchar(50) NOT NULL,
+  `provinsi_asesi` varchar(50) NOT NULL,
+  `kotakab_asesi` varchar(50) NOT NULL,
+  `tahunmasuk_asesi` varchar(50) NOT NULL,
+  `tahunlulus_asesi` varchar(50) NOT NULL,
+  `jurusan_asesi` varchar(50) NOT NULL,
+  `foto_asesi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_asesi`
+--
+
+INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `foto_asesi`) VALUES
+(1, '', '', '', '', '', 'laki', '', '', '', '', '', '', '', 'ee', '1686298825-3409.jpg'),
+(3, '11', '22', 'sgdws', 'wwvg', '131414', 'Laki-Laki', '', '', '', '', '', '', '', 'dd', '1686300498-download.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_event`
+--
+
+CREATE TABLE `tbl_event` (
+  `id_event` int NOT NULL,
+  `nama_event` varchar(50) NOT NULL,
+  `tanggal_event` date NOT NULL,
+  `jam_event` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_event`
+--
+
+INSERT INTO `tbl_event` (`id_event`, `nama_event`, `tanggal_event`, `jam_event`) VALUES
+(1, 'mjnuwq', '2023-06-09', '15:20:00'),
+(2, 'asdas', '2023-06-09', '17:23:00');
 
 -- --------------------------------------------------------
 
@@ -100,6 +154,18 @@ ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Indexes for table `tbl_asesi`
+--
+ALTER TABLE `tbl_asesi`
+  ADD PRIMARY KEY (`id_asesi`);
+
+--
+-- Indexes for table `tbl_event`
+--
+ALTER TABLE `tbl_event`
+  ADD PRIMARY KEY (`id_event`);
+
+--
 -- Indexes for table `tbl_pengaturan`
 --
 ALTER TABLE `tbl_pengaturan`
@@ -120,6 +186,18 @@ ALTER TABLE `tbl_skema`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_asesi`
+--
+ALTER TABLE `tbl_asesi`
+  MODIFY `id_asesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_event`
+--
+ALTER TABLE `tbl_event`
+  MODIFY `id_event` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengaturan`

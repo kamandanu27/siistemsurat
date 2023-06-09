@@ -35,65 +35,67 @@
                 ?>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>disposisi/insert" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>asesi/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="row">
-
-                      <div class="form-group">
-									       <label for="exampleInputEmail1">Id SM:</label>
-							        		<select class="form-control" id="id_sm" name="id_sm">
-							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_sm as $row){ ?>
-										        	<option value="<?= $row->id_sm ?>"><?= $row->id_sm ?></option>
-										        <?php } ?>
-								      	</select>
-							      	</div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="isi_disposisi">Isi Disposisi</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Isi Disposisi" name="isi_disposisi" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="sifat">Sifat</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Sifat" name="sifat" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="tgldisposisi">Tanggal Disposisi</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="date" class="form-control" placeholder="Tanggal Disposisi" name="tgldisposisi" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="bataswaktu">Batas Waktu</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="date" class="form-control" placeholder="Isi Disposisi" name="bataswaktu" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="col-md-3" for="status">Status</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                          <input type="text" class="form-control" placeholder="Status" name="status" required>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-									       <label for="exampleInputEmail1">Bagian:</label>
-							        		<select class="form-control" id="id_bagian" name="id_bagian">
-							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_perangkat as $row){ ?>
-										        	<option value="<?= $row->id_bagian ?>"><?= $row->nama_bagian ?></option>
-										        <?php } ?>
-								      	</select>
-							      	</div>
                       
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Nim</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Nim" name="nim_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Nik</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Nik" name="nik_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Nama</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Nama" name="nama_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Alamat</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Alamat" name="alamat_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">No. Telp</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="No. Telp" name="notlp_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+												<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
+												<select class="form-control" id="jeniskelamin_asesi" name="jeniskelamin_asesi">
+													<option value="">Pilih</option>
+													<option value="Laki-Laki">Laki-laki</option>
+													<option value="Perempuan">Perempuan</option>
+												</select>
+							      	</div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Jurusan</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Jurusan" name="jurusan_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                            <label class="col-sm-3 col-form-label">Foto Asesi</label>
+                            <div class="input-group col-sm-8 col-md-8">
+                             <input type="file" class="form-control" id="foto_asesi" name="foto_asesi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -101,7 +103,7 @@
                         <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
-                          <a href="<?= base_url() ?>disposisi" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>asesi" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

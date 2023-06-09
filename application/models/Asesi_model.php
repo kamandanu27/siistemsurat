@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Disposisi_model extends CI_Model {
+class Asesi_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -13,17 +13,13 @@ class Disposisi_model extends CI_Model {
 	{
 		if($where == null){
 			$this->db->select('*');
-			$this->db->from('disposisi');
-			$this->db->join('sm', 'disposisi.id_sm = sm.id_sm');
-			$this->db->join('perangkat', 'disposisi.id_bagian = perangkat.id_bagian');
-			$this->db->order_by('disposisi.id_disposisi', 'Asc');
+			$this->db->from('tbl_asesi');
+			$this->db->order_by('tbl_asesi.id_asesi', 'Asc');
 			$query = $this->db->get();
 		}else{
 			$this->db->select('*');
-			$this->db->from('disposisi');
-			$this->db->join('sm', 'disposisi.id_sm = sm.id_sm');
-			$this->db->join('perangkat', 'disposisi.id_bagian = perangkat.id_bagian');
-			$this->db->order_by('disposisi.id_disposisi', 'Asc');
+			$this->db->from('tbl_asesi');
+			$this->db->order_by('tbl_asesi.id_asesi', 'Asc');
 			$this->db->where($where);
 			$query = $this->db->get();
 		}
@@ -34,7 +30,7 @@ class Disposisi_model extends CI_Model {
 	public function cekpengguna($where)
 	{
 		$this->db->select('*');
-		$this->db->from('disposisi');
+		$this->db->from('tbl_asesi');
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query;
@@ -44,7 +40,7 @@ class Disposisi_model extends CI_Model {
 	public function jumlah_pengguna()
     {
         $this->db->select('count(id) as j_pengguna');
-		$this->db->from('disposisi');
+		$this->db->from('tbl_asesi');
 		$query = $this->db->get()->row();
 		return $query->j_pengguna;
     }
@@ -52,8 +48,8 @@ class Disposisi_model extends CI_Model {
 	public function detail($id)
 	{
 		$this->db->select('*');
-		$this->db->from('disposisi');
-		$this->db->where('id_disposisi', $id);
+		$this->db->from('tbl_asesi');
+		$this->db->where('id_asesi', $id);
 		$query = $this->db->get();
 		return $query;
 	}
@@ -61,7 +57,7 @@ class Disposisi_model extends CI_Model {
 	public function cek_username($username)
 	{
 		$this->db->select('*');
-		$this->db->from('disposisi');
+		$this->db->from('tbl_asesi');
 		$this->db->where('email', $username);
 		$query = $this->db->get();
 		return $query->num_rows();
@@ -73,10 +69,10 @@ class Disposisi_model extends CI_Model {
 		$username = $this->db->escape_str($username);
 		$password = $this->db->escape_str($enpass);
 		$this->db->select('*');
-		$this->db->from('disposisi');
+		$this->db->from('tbl_asesi');
 		$this->db->where(array(
-			'disposisi.email' => $username,
-			'disposisi.password' => sha1($password)
+			'tbl_asesi.email' => $username,
+			'tbl_asesi.password' => sha1($password)
 		));
 		$query = $this->db->get();
 		return $query->row();
@@ -84,19 +80,19 @@ class Disposisi_model extends CI_Model {
 
 	public function insert($data)
 	{
-		$this->db->insert('disposisi', $data);
+		$this->db->insert('tbl_asesi', $data);
 	}
 
 	public function update($data)
 	{
-		$this->db->where('id_disposisi', $data['id_disposisi']);
-		$this->db->update('disposisi', $data);
+		$this->db->where('id_asesi', $data['id_asesi']);
+		$this->db->update('tbl_asesi', $data);
 	}
 
 	public function delete($data)
 	{
-		$this->db->where('id_disposisi', $data['id_disposisi']);
-		$this->db->delete('disposisi');
+		$this->db->where('id_asesi', $data['id_asesi']);
+		$this->db->delete('tbl_asesi');
 	}
 
 

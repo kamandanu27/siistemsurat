@@ -32,9 +32,9 @@
                     }
 
                   ?>
-                  <h3 class="box-title">Data Disposisi</h3>
+                  <h3 class="box-title">Data Asesi</h3>
                   <div style="padding-top: 10px;">
-                  <p><a href="<?= base_url(); ?>disposisi/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
+                  <p><a href="<?= base_url(); ?>asesi/add" class="btn btn-sm btn-success icon-btn"><i class="fa fa-plus"></i> Tambah Data</a></p>
                   </div>
             
                 </div><!-- /.box-header -->
@@ -43,13 +43,14 @@
                       <thead>
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
-                              <th style="width: 15%;text-align: center;">Id Sm</th>
-                              <th style="width: 15%;text-align: center;">Isi Disposisi</th>
-                              <th style="width: 15%;text-align: center;">Sifat</th>
-                              <th style="width: 15%;text-align: center;">Tanggal Disposisi</th>
-                              <th style="width: 15%;text-align: center;">Batas Waktu</th>
-                              <th style="width: 13%;text-align: center;">Status</th>
-                              <th style="width: 13%;text-align: center;">Nama Bagian</th>
+                              <th style="width: 13%;text-align: center;">Nim</th>
+                              <th style="width: 13%;text-align: center;">Nik</th>
+                              <th style="width: 13%;text-align: center;">Nama</th>
+                              <th style="width: 13%;text-align: center;">Alamat</th>
+                              <th style="width: 13%;text-align: center;">No. Telp</th>
+                              <th style="width: 15%;text-align: center;">Jenis Kelamin</th>
+                              <th style="width: 15%;text-align: center;">Jurusan</th>
+                              <th style="width: 15%;text-align: center;">Foto</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
@@ -57,18 +58,21 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
-                              <td><?= $row->id_sm ?></td>
-                              <td><?= $row->isi_disposisi ?></td>
-                              <td><?= $row->sifat ?></td>
-                              <td><?= $row->tgldisposisi ?></td>
-                              <td><?= $row->bataswaktu ?></td>
-                              <td><?= $row->status ?></td>
-                              <td><?= $row->nama_bagian ?></td>
+                              <td><?= $row->nim_asesi ?></td>
+                              <td><?= $row->nik_asesi ?></td>
+                              <td><?= $row->nama_asesi ?></td>
+                              <td><?= $row->alamat_asesi ?></td>
+                              <td><?= $row->notlp_asesi ?></td>
+                              <td><?= $row->jeniskelamin_asesi ?></td>
+                              <td><?= $row->jurusan_asesi ?></td>
+                              <td>
+									              <img src="<?= base_url()?>/public/image/upload/asesi/<?= $row->foto_asesi ?>" style="width: 80px; height: 100px;">
+						            			</td>
 
                               <td style="text-align: center;">
-                                  <form action="<?= base_url() ?>disposisi/delete/<?= $row->id_disposisi ?>" method="post">
+                                  <form action="<?= base_url() ?>asesi/delete/<?= $row->id_asesi ?>" method="post">
                                       <div class="btn-group">
-                                          <a href="<?= base_url() ?>disposisi/edit/<?= $row->id_disposisi ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                          <a href="<?= base_url() ?>asesi/edit/<?= $row->id_asesi ?>" class=" btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
 
                                           <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Yakin ingin menghapus data?')" data-toggle="tooltip" title="Hapus"><span class="glyphicon glyphicon-trash"></span></button>
                                       </div>
